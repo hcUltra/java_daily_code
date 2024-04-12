@@ -11,7 +11,6 @@ public class Day_20220412_Reverse {
     public static class ListNode {
         int val;
         ListNode next;
-
         public ListNode(int val) {
             this.val = val;
         }
