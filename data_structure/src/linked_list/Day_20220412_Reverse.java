@@ -1,6 +1,5 @@
 package linked_list;
 
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -8,7 +7,7 @@ import java.util.Random;
  * @description TODO
  * @date 2024/4/12 10:57
  **/
-public class Day_2022010240_Reverse {
+public class Day_20220412_Reverse {
     public static class ListNode {
         int val;
         ListNode next;
@@ -50,7 +49,6 @@ public class Day_2022010240_Reverse {
             prev = head;
             head = next;
         }
-
         return prev;
     }
 
@@ -62,7 +60,7 @@ public class Day_2022010240_Reverse {
         printListNode(reverse(head));
         System.out.println();
         System.out.println("reverse double list");
-        DoubleListNode doubleHead = createDoubleLinkedList(10,0,5);
+        DoubleListNode doubleHead = createDoubleLinkedList(10, 0, 5);
         printDoubleListNode(doubleHead);
         System.out.println();
         printDoubleListNode(reverse(doubleHead));
