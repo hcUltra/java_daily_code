@@ -15,7 +15,7 @@ public class Day_20240413_SearchInsert {
             while (left <= right) {
                 mid = left + ((right - left) >>> 1);
                 if (nums[mid] <= target) {
-                    ans = mid;
+                    ans = mid; 
                     left = mid + 1;
                 } else {
                     right = mid - 1;
