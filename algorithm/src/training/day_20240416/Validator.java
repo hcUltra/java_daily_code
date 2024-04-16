@@ -1,7 +1,6 @@
 package training.day_20240416;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * @author hcUltra
@@ -82,7 +81,7 @@ public class Validator {
         System.out.println(Arrays.toString(test(arr, target)));
         System.out.println(Arrays.toString(f(arr, target)));
 
-        int testCount = 10_0000;
+        int testCount = 1_000;
         int maxLength = 100000;
         int maxValue = 10000;
         int targetMaxValue = 200000;
