@@ -8,7 +8,7 @@ import java.util.Map;
  * @description TODO
  * @date 2024/4/19 20:30
  **/
-public class L_1_TwoNumberAdd {
+public class L_1_TwoNumberSum {
     class Solution {
         public int[] twoSum(int[] nums, int target) {
             Map<Integer, Integer> map = new HashMap<>();
