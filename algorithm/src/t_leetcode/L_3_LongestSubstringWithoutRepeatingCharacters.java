@@ -15,7 +15,6 @@ public class L_3_LongestSubstringWithoutRepeatingCharacters {
             int[] last = new int[256];
             Arrays.fill(last, -1);
             int ans = 0;
-
             // 以某个字符的结尾位置进行枚举
             // 找出以某个字符结尾的无重复的最长子串
             // 由于每次只加入一个字符，所以最多就是加入的字符与前一个窗口中的某个字符重复

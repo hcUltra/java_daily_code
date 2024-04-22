@@ -6,5 +6,25 @@ package t_leetcode;
  * @date 2024/4/21 12:28
  **/
 public class L_62_UniquePaths {
+    class Solution {
+        public int uniquePaths(int m, int n) {
+            int[][] dp = new int[m][n];
+            // 填第一列（第一个位置不填）
+            for (int i = 0; i < m; i++) {
+                dp[i][0] = 1;
+            }
+            // 填第一行（第一个位置不填）
+            for (int i = 1; i < n; i++) {
+                dp[0][i] = 1;
+            }
 
+            for (int i = 1; i < m; i++) {
+                for (int j = 1; j < n; j++) {
+                    dp[i][j] = dp[i][j - 1] + dp[i - 1][j];
+                }
+            }
+
+            return dp[m - 1][n - 1];
+        }
+    }
 }
