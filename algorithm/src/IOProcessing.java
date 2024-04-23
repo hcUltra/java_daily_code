@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.StringTokenizer;
 
 /**
  * @author hcUltra
@@ -7,34 +8,42 @@ import java.io.*;
  **/
 public class IOProcessing {
     // 1. 静态空间
-    public static final int MAX= 2000;
+    public static final int MAX = 2000;
     public static int[][] arr = new int[MAX][MAX];
+
     public static void main(String[] args) throws IOException {
-        // 2. 数据读取
-        // 将数据读取到内存缓冲区
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StreamTokenizer in = new StreamTokenizer(br);
-        // 读取数字
-        int x = (int)in.nval;
-        // 下一个数字
-        in.nextToken();
+        Reader reader = new Reader();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = reader.nextInt();
+            }
+        }
+        reader.close();
+        System.out.println(arr[0][0]);
+    }
 
-        // 3. 读取行数据
-        // 读取一行
-        String s = br.readLine();
-        // 使用空格进行分割
-        String[] strings = s.split(" ");
-        // 将字符串转为数字
-        // ...
 
-        // 输出答案
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
-        // 添加答案
-        out.print(x);
-        // 提交答案
-        out.flush();
+    static class Reader {
+        StringTokenizer st = new StringTokenizer("");
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-        br.close();
-        out.close();
+        String next() throws IOException {
+            while (!st.hasMoreTokens()) {
+                st = new StringTokenizer(bf.readLine());
+            }
+            return st.nextToken();
+        }
+
+        int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
+
+        void close() throws IOException {
+            bf.close();
+        }
     }
 }
